@@ -24,18 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
           
             let historicalRates = data.map(entry => {
                 let dateObject = new Date(entry.timestamp * 1000);
-
+                    // transforma aquele timestamp FEIO em uma data REAL que pode ser utilizada 
+                // timestamp feio era um timestamp UNIX, o do javascript é em milisegundos e o do unix em segundos
+                // ou seja precisamos multiplicar por mil pra criar uma data javascript
+                //
                 let formattedDate = dateObject.toISOString().split("T")[0];
-
+                   // depois, formatamos a data javascript para uma string normalizada
+                // exemplo: Wed Mar 18 2025 00:00:00 GMT+0000 (UTC)  - > "2025-03-18T00:00:00.000Z"
+                // depois queremos splitar naquele T e pegar apenas a parte da esquerda, por isso o .split("T") e index 0
                 let exchangeRate = parseFloat(entry.bid);
+                //transformar a rate da entrada em float, pois tem ponto decimal ne 
 
                 return {
                     date: formattedDate,
-                    rate: exchangeRate
+                    rate: exchangeRate  // isso aqui retorna o dicionario com os campos data (com a data formatada) e o cambio (com ele parseado pra float) 
+
                 };
             });
 
-            historicalRates.reverse();
+            historicalRates.reverse(); // isso aqui coloca os dados em ordem cronologica, de (11,10,9,8) para (8,9,10,11) por exemplo
             // criar o grafico:        
             // as barras vao ser varias divs dentro do container-grafico
             const containerGrafico = document.getElementById("container-grafico");
@@ -50,16 +57,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
             }
-
+            var averageRate =( minRate+maxRate)/2;
+            containerGrafico.innerHTML = "";
             for(var i = 0; i < historicalRates.length; i++){
+                var barContainer = document.createElement('div');
+                barContainer.classList.add('bar-container');
+                var dateLabel = document.createElement('div');
+                dateLabel.classList.add('bar-label');
+                dateLabel.textContent = historicalRates[i].date.slice(-2);
+                var rateLabel = document.createElement('div');
+                rateLabel.classList.add('bar-label');
+                rateLabel.textContent = historicalRates[i].rate.toFixed(2);
+                // fica com exatos 2 numeros apos o ponto decimal
+
                 var bar = document.createElement('div');
                 bar.classList.add('bar');// uma bar é uma barrinha no grafico
                 console.log(barAltura);
-          
-                var barAltura = ((Math.log(historicalRates[i].rate) - Math.log(minRate)) / 
-                 (Math.log(maxRate) - Math.log(minRate))) * 100; // formula logaritmica de calcular a altura das barrinhas, para dar uma diferenca maior entre variacoes pequenas
+                
+                var barAltura  = ((historicalRates[i].rate - minRate) / (maxRate - minRate)) * 50  + 25;
+               
                 bar.style.height = barAltura + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
-                containerGrafico.appendChild(bar); // colocar a barrinha no grafico
+                barContainer.appendChild(dateLabel);
+                barContainer.appendChild(bar);
+                barContainer.appendChild(rateLabel);
+                containerGrafico.appendChild(barContainer);
                 console.log("barrinha de altura " + barAltura + " adicionada");
             }
 
