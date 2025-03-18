@@ -1,7 +1,74 @@
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+         #container-grafico {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 90%;
+            max-width: 500px;
+            height: 300px; /* Set a fixed height */
+            margin: 20px auto;
+            background-color: #eee; /* Light background to make it visible */
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+        #graph-container {
+          display: flex;
+          background-color: #4CAF50;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 80vw; /* O gráfico ocupa 80% da largura da tela */
+          height: 60vh; /* O gráfico ocupa 60% da altura da tela */
+          margin: 0 auto;
+        }
 
+        .bar {
+          width: 4%; /* Cada barra ocupa 4% da largura total do gráfico */
+          background-color: #4CAF50;
+          transition: height 0.3s ease-in-out;
+        }
 
-
-
+    
 
 
 
