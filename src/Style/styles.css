@@ -68,6 +68,12 @@
           transition: height 0.3s ease-in-out;
         }
 
+        .montaga-regular {
+            font-family: "Montaga", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
     
 
 
