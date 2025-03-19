@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dateLabel.textContent = historicalRates[i].date.slice(-2);
                 var rateLabel = document.createElement('div');
                 rateLabel.classList.add('bar-label');
-                rateLabel.textContent = historicalRates[i].rate.toFixed(2);
+                rateLabel.textContent = historicalRates[i].rate.toFixed(3);
                 // fica com exatos 2 numeros apos o ponto decimal
 
                 var bar = document.createElement('div');
@@ -76,12 +76,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 var barAltura  = ((historicalRates[i].rate - minRate) / (maxRate - minRate)) * 50  + 25;
                
-                bar.style.height = barAltura + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
+                bar.style.height = "0" + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
                 barContainer.appendChild(dateLabel);
                 barContainer.appendChild(bar);
                 barContainer.appendChild(rateLabel);
                 containerGrafico.appendChild(barContainer);
                 console.log("barrinha de altura " + barAltura + " adicionada");
+                   (function (barElement, altura) {
+        setTimeout(() => {
+            barElement.style.height = altura + "%";
+        }, 100);
+    })(bar, barAltura);
             }
 
             console.log("câmbio atual:", currentRate);
