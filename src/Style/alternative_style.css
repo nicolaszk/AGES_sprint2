@@ -57,7 +57,7 @@ header {
     background-color: #fff;
     align-items: center;
     justify-content: center;
-    border-radius: 2px;
+    border-radius: 10px;
     font-family: "Goldman", sans-serif;
 }
 
@@ -77,12 +77,22 @@ select {
     height: 40%;
     top: 45%;
     left: 2%;
+    border-radius: 10px;
 }
 
 option {
     font-family: "Goldman", sans-serif;
 }
 
-.form-group {
-    
+#value_input {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 45%;
+    top: 40%;
+    right: 16%;
+    border: none;
+    font-family: "Goldman", sans-serif;
+    font-size: 300%;
+    border-radius: 10px;
 }
