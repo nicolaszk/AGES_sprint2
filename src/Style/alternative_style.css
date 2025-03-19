@@ -1,8 +1,88 @@
 .container {
     position: absolute;
     display: block;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
     width: 100%;
     height: 100%;
-    background-image: url("Images/background.png");
+    background-image: url("../Images/background.png");
 
+}
+
+header {
+    position: relative;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    width: 100%;
+    height: 15%;
+    background-color: #052A0A;
+    opacity: 70%;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+#title_tool {
+    position: absolute;
+    display: flex;
+    font-weight: 400;
+    font-size: 300%;
+    font-family: "Goldman", sans-serif;
+
+}
+
+.box {
+    position: relative;
+    display:block;
+    margin-top: 3%;
+    width: 70%;
+    height: 15%;
+    background-color: #ddd;
+    left: 15%;
+}
+
+.label_box {
+    position: absolute;
+    display: flex;
+    color: #000;
+    top: 10%;
+    left: 2%;
+    width: 7%;
+    height: 25%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    font-family: "Goldman", sans-serif;
+}
+
+select {
+  /*  -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;*/
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    font-family: "Goldman", sans-serif;
+    border: none;
+    border-radius: 0px;
+    width: 20%;
+    height: 40%;
+    top: 45%;
+    left: 2%;
+}
+
+option {
+    font-family: "Goldman", sans-serif;
+}
+
+.form-group {
+    
 }
