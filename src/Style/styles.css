@@ -1,8 +1,14 @@
+
         body {
             font-family: Arial, sans-serif;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
+            background-image:url('Images/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
         }
         .container {
             background-color: #f5f5f5;
