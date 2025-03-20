@@ -38,11 +38,11 @@ header {
 
 .box {
     position: relative;
-    display:block;
+    display: block;
     margin-top: 3%;
     width: 70%;
     height: 15%;
-    background-color: #ddd;
+    background-color: none;
     left: 15%;
 }
 
@@ -91,6 +91,20 @@ option {
     height: 45%;
     top: 40%;
     right: 16%;
+    border: none;
+    font-family: "Goldman", sans-serif;
+    font-size: 300%;
+    border-radius: 10px;
+}
+
+.display_result {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 45%;
+    top: 40%;
+    right: 16%;
+    background-color: #fff;
     border: none;
     font-family: "Goldman", sans-serif;
     font-size: 300%;
