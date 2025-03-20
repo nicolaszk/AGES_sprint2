@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Converter</title>
+    <link rel="stylesheet" href="Style/alternative_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Montaga&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -11,7 +15,7 @@
             <h1 id="title_tool">Coin Converter</h1>
         </header>
         <div class="box">
-          <!--  <div class="lable_box">from:</div>
+            <div class="label_box">From:</div>
             <div class="form-group">
                 <select id="from-currency">
                     <option value="BRL">BRL - Real Brasileiro</option>
@@ -26,12 +30,14 @@
                     <option value="INR">INR - Rúpia Indiana</option>
                     <option value="MXN">MXN - Peso Mexicano</option>
                 </select>
-            </div> -->
+            </div>
+            <input type="text" id="value_input">
+            <img src="" alt="flag_image" id="flag">
         </div>
         <div class="box">
-            <div class="lable_box">to:</div>
+            <div class="label_box">to:</div>
             <div class="to-group">
-              <!--  <select id="to-currency">
+               <select id="to-currency">
                     <option value="BRL">BRL - Real Brasileiro</option>
                     <option value="EUR">EUR - Euro</option>
                     <option value="USD">USD - Dólar Americano</option>
@@ -44,13 +50,15 @@
                     <option value="INR">INR - Rúpia Indiana</option>
                     <option value="MXN">MXN - Peso Mexicano</option>
                 </select>
-            </div> -->
+            </div>
+            <div class="display_result"></div>
+            <img src="" alt="flag_image" id="flag">
         </div>
-        <button id="reset" value="reset_all_values">reset</button>
+        <!--<button id="reset" value="reset_all_values">reset</button>
         <button id="convert" value="convert_currency">convert</button>
         <footer>
             <h4 id="footer_text">©2025 Coin Converter</h4>
-        </footer>
+        </footer>-->
     </div>
 </body>
 </html>
