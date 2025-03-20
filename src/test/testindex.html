@@ -7,59 +7,78 @@
     <link rel = "stylesheet" href = "teststyles.css">  
 </head>
 <body>
-    <section> 
-    <div class="container">
-        <h1>Conversor Cambial</h1>
-        <div class="form-group">
-            <label for="amount">Valor:</label>
-            <input type="number" id="amount" placeholder="Insira um valor válido" step="0.01" min="0">
+    <div class = "header"> </div>
+  
+    
+    <div class = "area" id = "area1">
+        <div id = "from-currency-select-container">
+            <div id = "from-currency-select-background">
+            <img id = "to-currency-image" src="Flag_of_the_United_States.svg.png" alt="USD Flag" class="flag-icon">
+                <select id = "from-currency-select">
+                    <option value = "USD">USD</option>
+                </select>
+             </div>
         </div>
-        <div class="form-group">
-            <label for="from-currency">Moeda de origem:</label>
-            <select id="from-currency">
-                <option value="BRL">BRL - Real Brasileiro</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="USD">USD - Dólar Americano</option>
-                <option value="GBP">GBP - Libra inglesa</option>
-                <option value="JPY">JPY - Iene japonês</option>
-                <option value="CAD">CAD - Dólar Canadense</option>
-                <option value="AUD">AUD - Dólar Australiano</option>
-                <option value="CHF">CHF - Franco Suíco</option>
-                <option value="CNY">CNY - Yuan Chinês</option>
-                <option value="INR">INR - Rúpia Indiana</option>
-                <option value="MXN">MXN - Peso Mexicano</option>
-            </select>
+    
+        <div class = "two-arrows-circle"> 
+            <img> </img>
         </div>
-        <div class="form-group">
-            <label for="to-currency">Moeda de destino:</label>
-            <select id="to-currency">
-                <option value="BRL">BRL - Real Brasileiro</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="USD">USD - Dólar Americano</option>
-                <option value="GBP">GBP - Libra inglesa</option>
-                <option value="JPY">JPY - Iene japonês</option>
-                <option value="CAD">CAD - Dólar Canadense</option>
-                <option value="AUD">AUD - Dólar Australiano</option>
-                <option value="CHF">CHF - Franco Suíco</option>
-                <option value="CNY">CNY - Yuan Chinês</option>
-                <option value="INR">INR - Rúpia Indiana</option>
-                <option value="MXN">MXN - Peso Mexicano</option>
-            </select>
+        <div id = "to-currency-select-container">
+            <div id = "to-currency-select-background">
+            <img id = "to-currency-image" src="Flag_of_Brazil.svg.png" alt="BRL Flag" class="flag-icon">
+             <select id = "to-currency-select">
+                 <option value = "BRL">BRL</option>    
+             </select>
+            </div>
         </div>
-        <button id="convert-btn">Convert</button>
-        <div id="result"></div>
-        <div id="cambioatual"></div>
     </div>
-    </section>
-    <div id = "container-grafico">
-        <!-- barras adicionadas pelo javascript -->
-
-
+    
+    <div class = "area" id = "area2"> 
+        <button id = "convert-button"> converter</button>    
     </div>
-    <div id = "flag-container">
-        <img id = "to-curr-flag-img" src="" alt="Country Flag" width="50">
-        <img id = "from-curr-flag-img" src = "" alt ="Country Flag" width="50">
-     </div>
-    <script src="testscript.js"></script>
+    
+    <div class = "area" id = "area3"> 
+        <div id = "current-exchange">
+               <div id = "exchange"> </div>
+               <div id = "reverse-exchange"> </div>
+        </div>
+        <div id = "area-3-middle-separator"> </div>
+        <div id = "conversion-area">
+            <div id = "input-container"> 
+                 <input id = "value-input">
+                 <span id = "currency-input-code">BRL</span>
+             </div>
+             <div id = "conversion-area-middle-separator"></div>
+             <div id = "output-container">
+                 <input id = "value-output">
+                 <span id = "currency-output-code">USD</span>
+             </div>
+        </div>
+    </div>
+    
+    <div class = "area" id = "area4">
+        <div class = "graph-bars">         
+            <div class = "bar" id = "bar 1"> </div>
+            <div class = "bar" id = "bar 2"> </div>
+            <div class = "bar" id = "bar 3"> </div>
+            <div class = "bar" id = "bar 4"> </div>
+            <div class = "bar" id = "bar 5"> </div>
+            <div class = "bar" id = "bar 6"> </div>
+            <div class = "bar" id = "bar 7"> </div>
+            <div class = "bar" id = "bar 8"> </div>
+            <div class = "bar" id = "bar 9"> </div>
+            <div class = "bar" id = "bar 10"> </div>
+            <div class = "bar" id = "bar 11"> </div>
+            <div class = "bar" id = "bar 12"> </div>
+            <div class = "bar" id = "bar 13"> </div>
+            <div class = "bar" id = "bar 14"> </div>
+            <div class = "bar" id = "bar 15"> </div>
+    </div>
+   </div>    
+<div class = "area" id = "area5"> 
+       
+    </div>
+
+   <script src="testscript.js"></script>
 </body>
 </html>

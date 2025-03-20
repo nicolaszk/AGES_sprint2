@@ -110,8 +110,10 @@ convertBtn.addEventListener('click', async function() {
             const response = await fetch(`https://economia.awesomeapi.com.br/json/daily/${fromCurrency}-${toCurrency}/15`);
             const data = await response.json();
             // bid é o preco atual da moeda
-            let currentRate = parseFloat(data[0].bid); 
-            console.log(data);
+            let currentRate = parseFloat(data[0].bid); i
+            for(int i = 0; i < data.length; i++){
+                console.log(data[i]);
+            }
             let historicalRates = data.map(entry => {
                 let dateObject = new Date(entry.timestamp * 1000);
                     // transforma aquele timestamp FEIO em uma data REAL que pode ser utilizada 
@@ -124,7 +126,7 @@ convertBtn.addEventListener('click', async function() {
                 // depois queremos splitar naquele T e pegar apenas a parte da esquerda, por isso o .split("T") e index 0
                 let exchangeRate = parseFloat(entry.bid);
                 //transformar a rate da entrada em float, pois tem ponto decimal ne 
-
+      
                 return {
                     date: formattedDate,
                     rate: exchangeRate  // isso aqui retorna o dicionario com os campos data (com a data formatada) e o cambio (com ele parseado pra float) 
