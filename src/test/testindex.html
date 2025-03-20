@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Cambial</title>
+    <link rel = "stylesheet" href = "teststyles.css">  
+</head>
+<body>
+    <section> 
+    <div class="container">
+        <h1>Conversor Cambial</h1>
+        <div class="form-group">
+            <label for="amount">Valor:</label>
+            <input type="number" id="amount" placeholder="Insira um valor válido" step="0.01" min="0">
+        </div>
+        <div class="form-group">
+            <label for="from-currency">Moeda de origem:</label>
+            <select id="from-currency">
+                <option value="BRL">BRL - Real Brasileiro</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="USD">USD - Dólar Americano</option>
+                <option value="GBP">GBP - Libra inglesa</option>
+                <option value="JPY">JPY - Iene japonês</option>
+                <option value="CAD">CAD - Dólar Canadense</option>
+                <option value="AUD">AUD - Dólar Australiano</option>
+                <option value="CHF">CHF - Franco Suíco</option>
+                <option value="CNY">CNY - Yuan Chinês</option>
+                <option value="INR">INR - Rúpia Indiana</option>
+                <option value="MXN">MXN - Peso Mexicano</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="to-currency">Moeda de destino:</label>
+            <select id="to-currency">
+                <option value="BRL">BRL - Real Brasileiro</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="USD">USD - Dólar Americano</option>
+                <option value="GBP">GBP - Libra inglesa</option>
+                <option value="JPY">JPY - Iene japonês</option>
+                <option value="CAD">CAD - Dólar Canadense</option>
+                <option value="AUD">AUD - Dólar Australiano</option>
+                <option value="CHF">CHF - Franco Suíco</option>
+                <option value="CNY">CNY - Yuan Chinês</option>
+                <option value="INR">INR - Rúpia Indiana</option>
+                <option value="MXN">MXN - Peso Mexicano</option>
+            </select>
+        </div>
+        <button id="convert-btn">Convert</button>
+        <div id="result"></div>
+        <div id="cambioatual"></div>
+    </div>
+    </section>
+    <div id = "container-grafico">
+        <!-- barras adicionadas pelo javascript -->
+
+
+    </div>
+    <div id = "flag-container">
+        <img id = "to-curr-flag-img" src="" alt="Country Flag" width="50">
+        <img id = "from-curr-flag-img" src = "" alt ="Country Flag" width="50">
+     </div>
+    <script src="testscript.js"></script>
+</body>
+</html>
