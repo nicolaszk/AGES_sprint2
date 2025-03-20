@@ -26,4 +26,4 @@ getData(x).then(data => {
     phrase.textContent = `A conversao de ${value}${money_from} para ${money_to} eh = ${(data[replaced_value].bid*value).toFixed(2)}`;
 });
 
-//pegar bandeiras
+//para amanha. pegar api bandeiras
