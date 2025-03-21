@@ -12,5 +12,6 @@ function reset() {
     stage = localStorage.getItem('stage')
     if (stage !== null) {
         document.body.classList.remove("stage_two")
+        localStorage.setItem('stage', null)
     }
 }
