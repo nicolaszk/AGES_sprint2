@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
             });
 
-            historicalRates.reverse();
             // criar o grafico:        
             // as barras vao ser varias divs dentro do container-grafico
             const containerGrafico = document.getElementById("container-grafico");
@@ -52,15 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             for(var i = 0; i < historicalRates.length; i++){
-                var bar = document.createElement('div');
-                bar.classList.add('bar');// uma bar é uma barrinha no grafico
+                if(i = 0){
+                    var bar = document.getElementById("today");
+                }
+                else{
+                    var bar = document.getElementById(i);
+                }
                 console.log(barAltura);
           
                 var barAltura = ((Math.log(historicalRates[i].rate) - Math.log(minRate)) / 
                  (Math.log(maxRate) - Math.log(minRate))) * 100; // formula logaritmica de calcular a altura das barrinhas, para dar uma diferenca maior entre variacoes pequenas
                 bar.style.height = barAltura + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
-                containerGrafico.appendChild(bar); // colocar a barrinha no grafico
-                console.log("barrinha de altura " + barAltura + " adicionada");
+                console.log("barrinha de altura " + barAltura + "a");
             }
 
             console.log("câmbio atual:", currentRate);
