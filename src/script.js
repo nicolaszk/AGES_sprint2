@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() { 
-    const amountInput = document.getElementById('amount');
+    const amountInput = document.getElementById('value_input');
     const fromCurrencySelect = document.getElementById('from-currency');
     const toCurrencySelect = document.getElementById('to-currency');
-    const convertBtn = document.getElementById('convert-btn');
-    const resultDiv = document.getElementById('result');
+    const convertBtn = document.getElementById('convert');
+    const resultDiv = document.getElementById('display_result');
     const currentRateDiv = document.getElementById('cambioatual');
 
     convertBtn.addEventListener('click', async function() {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fromCurrency = fromCurrencySelect.value;
         const toCurrency = toCurrencySelect.value;
 
+        
         if (isNaN(amount)) {
             resultDiv.textContent = 'Insira um valor válido';
             return;
@@ -37,35 +38,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // criar o grafico:        
             // as barras vao ser varias divs dentro do container-grafico
-            const containerGrafico = document.getElementById("container-grafico");
+            const containerGrafico = document.getElementById("graph");
             var minRate = Infinity;
             var maxRate = -Infinity;
             for(var i = 0; i < historicalRates.length; i++){
                 if(historicalRates[i].rate > maxRate){
-                    maxRate = historicalRates[i].rate;
+                    maxRate = parseFloat(historicalRates[i].rate);
                 }
                 if(historicalRates[i].rate < minRate){
-                    minRate = historicalRates[i].rate;
-                }
+                    minRate = parseFloat(historicalRates[i].rate);
+                }   
 
             }
+for (var i = 0; i < historicalRates.length; i++) {
+    if (i == 0) {
+        var bar = document.getElementById("today");
+    } else {
+        var bar = document.getElementById(i);
+    }
 
-            for(var i = 0; i < historicalRates.length; i++){
-                if(i = 0){
-                    var bar = document.getElementById("today");
-                }
-                else{
-                    var bar = document.getElementById(i);
-                }
-                console.log(barAltura);
-          
-                var barAltura = ((Math.log(historicalRates[i].rate) - Math.log(minRate)) / 
-                 (Math.log(maxRate) - Math.log(minRate))) * 100; // formula logaritmica de calcular a altura das barrinhas, para dar uma diferenca maior entre variacoes pequenas
-                bar.style.height = barAltura + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
-                console.log("barrinha de altura " + barAltura + "a");
-            }
+    if (!bar) {
+        console.warn(`Element with ID ${i} not found.`);
+        continue; 
+    }
 
-            console.log("câmbio atual:", currentRate);
+    var rate = parseFloat(historicalRates[i].rate);
+    
+    if (isNaN(rate) || rate <= 0 || minRate <= 0 || maxRate <= 0) {
+        console.error(`Invalid rate detected: rate=${rate}, minRate=${minRate}, maxRate=${maxRate}`);
+        continue;
+    }
+
+    var barAltura = ((Math.log(rate) - Math.log(minRate)) /
+        (Math.log(maxRate) - Math.log(minRate))) * 100;
+
+    if (isNaN(barAltura)) {
+        console.error("barAltura calculation failed:", barAltura);
+        continue;
+    }
+
+    bar.style.height = barAltura + "%";
+    console.log(`Bar ${i} height set to ${barAltura}%`);
+}
+           console.log("câmbio atual:", currentRate);
             console.log("câmbio dos ultimos 15 dias:", historicalRates);
             //calcular e mostrar o resultado da conversao
             const convertedAmount = amount * currentRate; 
