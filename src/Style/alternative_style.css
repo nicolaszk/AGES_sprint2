@@ -151,6 +151,7 @@ option {
     font-size: 2vmax;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 #reset:active {
@@ -173,6 +174,7 @@ option {
     align-items: center;
     margin-bottom: 10%;
     margin-top: 10%;
+    border-radius: 10px;
 }
 
 #information {
