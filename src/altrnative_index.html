@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Converter</title>
+    <link rel="stylesheet" href="Style/alternative_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Montaga&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="stage-two">
     <div class="container">
         <header>
             <h1 id="title_tool">Coin Converter</h1>
         </header>
         <div class="box">
-          <!--  <div class="lable_box">from:</div>
-            <div class="form-group">
+            <div class="label_box">From:</div>
+            <div class="from-group">
                 <select id="from-currency">
                     <option value="BRL">BRL - Real Brasileiro</option>
                     <option value="EUR">EUR - Euro</option>
@@ -26,12 +30,14 @@
                     <option value="INR">INR - Rúpia Indiana</option>
                     <option value="MXN">MXN - Peso Mexicano</option>
                 </select>
-            </div> -->
+            </div>
+            <input type="text" id="value_input">
+            <img src="" alt="flag_image" class="flag" id="flag_from">
         </div>
         <div class="box">
-            <div class="lable_box">to:</div>
+            <div class="label_box">to:</div>
             <div class="to-group">
-              <!--  <select id="to-currency">
+               <select id="to-currency">
                     <option value="BRL">BRL - Real Brasileiro</option>
                     <option value="EUR">EUR - Euro</option>
                     <option value="USD">USD - Dólar Americano</option>
@@ -44,13 +50,41 @@
                     <option value="INR">INR - Rúpia Indiana</option>
                     <option value="MXN">MXN - Peso Mexicano</option>
                 </select>
-            </div> -->
+            </div>
+            <div id="display_result">dasdad</div>
+            <img src="" alt="flag_image" class="flag" id="flag_to">
         </div>
-        <button id="reset" value="reset_all_values">reset</button>
+
+        <div id="conversion">dsiadjsanjdnsajdnsajndjan</div>
+        <button id="reset" name="reset" value="reset_all_values">reset</button>
         <button id="convert" value="convert_currency">convert</button>
+        <div class="box_bottom">
+            <h4 id="statistics_text">statistics</h4>
+            <div id="graph">
+                <div class="bar" id="14"></div>
+                <div class="bar" id="13"></div>
+                <div class="bar" id="12"></div>
+                <div class="bar" id="11"></div>
+                <div class="bar" id="10"></div>
+                <div class="bar" id="9"></div>
+                <div class="bar" id="8"></div>
+                <div class="bar" id="7"></div>
+                <div class="bar" id="6"></div>
+                <div class="bar" id="5"></div>
+                <div class="bar" id="4"></div>
+                <div class="bar" id="3"></div>
+                <div class="bar" id="2"></div>
+                <div class="bar" id="1"></div>
+                <div class="bar" id="0"></div>
+            </div>
+        </div>
+        
         <footer>
             <h4 id="footer_text">©2025 Coin Converter</h4>
         </footer>
+
+        
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
