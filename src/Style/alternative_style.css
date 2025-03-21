@@ -144,7 +144,7 @@ option {
     height: 5%;
     width: 8%;
     right: 15%;
-    top: 50%;
+    top: 56vh;
     background-color: #D9D9D9;
     color: #000;
     border: none;
@@ -243,9 +243,9 @@ option {
     font-family: "Goldman", sans-serif;
     font-weight: 300;
     font-size: 6vh;
-    font-size: 4vw;
+    font-size: 3vw;
     width: fit-content;
-    height: fit-content;
+    height: 6vh;
     left: 16.5%;
 }
 
@@ -257,4 +257,14 @@ option {
    /* background-color: #fff;*/
     right: 4%;
     top: 35%;
+}
+
+#conversion_symble {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    width: 8vh;
+    height: 3.5vw;
+    align-self: center;
+    left: 45%;
 }
