@@ -27,6 +27,20 @@ header {
     justify-content: center;
 }
 
+footer {
+    position: absolute;
+    display: block;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    background-color: #052A0A;
+    color: #fff;
+    font-family: "Goldman", sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
 #title_tool {
     position: absolute;
     display: flex;
@@ -97,7 +111,7 @@ option {
     border-radius: 10px;
 }
 
-.display_result {
+#display_result {
     position: absolute;
     display: flex;
     width: 60%;
@@ -136,6 +150,11 @@ option {
     align-items: center;
 }
 
+#reset:active {
+    background-color: #ddd;
+    opacity: 10%;
+}
+
 #convert {
     position: absolute;
     display: flex;
@@ -151,6 +170,16 @@ option {
     font-size: 150%;
     justify-content: center;
     align-items: center;
+}
+
+#convert:active {
+    background-color: #ddd;
+    opacity: 10%;
+}
+
+.stage-two #convert {
+    top: 80%;
+    left: 17%;
 }
 
 .stage-two .box_bottom {
