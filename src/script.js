@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() { 
-    const amountInput = document.getElementById('amount');
+    const amountInput = document.getElementById('value_input');
     const fromCurrencySelect = document.getElementById('from-currency');
     const toCurrencySelect = document.getElementById('to-currency');
-    const convertBtn = document.getElementById('convert-btn');
-    const resultDiv = document.getElementById('result');
-    const currentRateDiv = document.getElementById('cambioatual');
-    document.querySelectorAll(".bar-label").forEach(label => {
-         let textLength = label.textContent.length;
-         if(textLength > 5){
-             label.style.fontSize = "1vmin";
-            } else if(textLength > 5){
-                label.style.fontSize = "1.3vmin";
-               } else{
-                   label.style.fontSize = "1.6vmin";
-               }
-    });
+    const convertBtn = document.getElementById('convert');
+    const resultDiv = document.getElementById('display_result');
+    const currentRateDiv = document.getElementById('conversion');
+    //document.querySelectorAll(".bar-label").forEach(label => {
+      //   let textLength = label.textContent.length;
+        // if(textLength > 5){
+          //   label.style.fontSize = "1vmin";
+           // } else if(textLength > 5){
+             //   label.style.fontSize = "1.3vmin";
+              // } else{
+               //    label.style.fontSize = "1.6vmin";
+              // }
+  //  });
 
     // TRANSFORMAR CURRENCY EM CODIGO
     const currencyToCountryCode = {
@@ -75,18 +75,18 @@ if (flagUrl) {
 
 // Add event listeners to the dropdowns
 document.getElementById('from-currency').addEventListener('change', () => {
-  updateFlag('from-currency', 'from-curr-flag-img');
+  updateFlag('from-currency', 'flag_from');
 });
 
 document.getElementById('to-currency').addEventListener('change', () => {
-  updateFlag('to-currency', 'to-curr-flag-img');
+  updateFlag('to-currency', 'flag_to');
 });
 
 // Initialize flags on page load
 window.onload = function(){
 
-updateFlag('from-currency', 'from-curr-flag-img');
-updateFlag('to-currency', 'to-curr-flag-img');
+updateFlag('from-currency', 'flag_from');
+updateFlag('to-currency', 'flag_to');
 };
 /////////////////////////////////////////////////
 
@@ -132,7 +132,6 @@ convertBtn.addEventListener('click', async function() {
                 };
             });
 
-            historicalRates.reverse(); // isso aqui coloca os dados em ordem cronologica, de (11,10,9,8) para (8,9,10,11) por exemplo
             // criar o grafico:        
             // as barras vao ser varias divs dentro do container-grafico
             const containerGrafico = document.getElementById("container-grafico");
@@ -148,34 +147,21 @@ convertBtn.addEventListener('click', async function() {
 
             }
             var averageRate =( minRate+maxRate)/2;
-            containerGrafico.innerHTML = "";
             for(var i = 0; i < historicalRates.length; i++){
-                var barContainer = document.createElement('div');
-                barContainer.classList.add('bar-container');
-                var dateLabel = document.createElement('div');
-                dateLabel.classList.add('bar-label');
-                dateLabel.textContent = historicalRates[i].date.slice(-2);
-                var rateLabel = document.createElement('div');
-                rateLabel.classList.add('bar-label');
-                rateLabel.textContent = historicalRates[i].rate.toFixed(3);
+
+                //dateLabel.textContent = historicalRates[i].date.slice(-2);
+                //var rateLabel = document.createElement('div');
+                //rateLabel.classList.add('bar-label');
+                //rateLabel.textContent = historicalRates[i].rate.toFixed(3);
                 // fica com exatos 2 numeros apos o ponto decimal
 
-                var bar = document.createElement('div');
-                bar.classList.add('bar');// uma bar é uma barrinha no grafico
+                var bar = document.getElementById("" + i);
                 
                 var barAltura  = ((historicalRates[i].rate - minRate) / (maxRate - minRate)) * 50  + 25;
-               
-                bar.style.height = "0" + "%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
-                barContainer.appendChild(dateLabel);
-                barContainer.appendChild(bar);
-                barContainer.appendChild(rateLabel);
-                containerGrafico.appendChild(barContainer);
+                console.log(bar + " " + i) ;              
+                bar.style.height = "0%"; // tamanho da barrinha vai ser a porcentagem de altura calculada do container
                 console.log("barrinha de altura " + barAltura + " adicionada");
-                   (function (barElement, altura) {
-        setTimeout(() => {
-            barElement.style.height = altura + "%";
-        }, 100);
-    })(bar, barAltura);
+                bar.style.height = barAltura + "%";
             }
 
             console.log("câmbio atual:", currentRate);
