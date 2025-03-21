@@ -45,7 +45,8 @@ footer {
     position: absolute;
     display: flex;
     font-weight: 400;
-    font-size: 300%;
+    font-size: 8vh;
+    font-size: 5vw;
     font-family: "Goldman", sans-serif;
 
 }
@@ -73,6 +74,8 @@ footer {
     justify-content: center;
     border-radius: 10px;
     font-family: "Goldman", sans-serif;
+    font-size: 2vh;
+    font-size: 2vh;
 }
 
 select {
@@ -107,7 +110,8 @@ option {
     right: 16%;
     border: none;
     font-family: "Goldman", sans-serif;
-    font-size: 300%;
+    font-size: 5vh;
+    font-size: 3.5vw;
     border-radius: 10px;
 }
 
@@ -121,7 +125,8 @@ option {
     background-color: #fff;
     border: none;
     font-family: "Goldman", sans-serif;
-    font-size: 300%;
+    font-size: 5vh;
+    font-size: 3.5vw;
     border-radius: 10px;
 }
 
@@ -145,7 +150,8 @@ option {
     border: none;
     box-shadow: none;
     font-family: "Goldman", sans-serif;
-    font-size: 150%;
+    font-size: 3vh;
+    font-size: 2vw;
     justify-content: center;
     align-items: center;
 }
@@ -167,7 +173,8 @@ option {
     border: none;
     box-shadow: none;
     font-family: "Goldman", sans-serif;
-    font-size: 150%;
+    font-size: 3vh;
+    font-size: 2vw;
     justify-content: center;
     align-items: center;
 }
@@ -194,9 +201,10 @@ option {
 
 .stage-two #statistics_text {
     position: absolute;
-    display: flex;
+    display: block;
     font-family: "Goldman", sans-serif;
-    font-size: 200%;
+    font-size: 4vh;
+    font-size: 2.1vw;
     font-weight: 300;
     color: #fff;
     top: 10%;
@@ -234,11 +242,11 @@ option {
     color: white;
     font-family: "Goldman", sans-serif;
     font-weight: 300;
-    font-size: 300%;
+    font-size: 6vh;
+    font-size: 4vw;
     width: fit-content;
     height: fit-content;
-    top: 50%;
-    left: 15%;
+    left: 16.5%;
 }
 
 .flag {

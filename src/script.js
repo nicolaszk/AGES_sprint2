@@ -163,12 +163,13 @@ convertBtn.addEventListener('click', async function() {
                 console.log("barrinha de altura " + barAltura + " adicionada");
                 bar.style.height = barAltura + "%";
             }
+            // ${fromCurrency}
 
             console.log("câmbio atual:", currentRate);
             console.log("câmbio dos ultimos 15 dias:", historicalRates);
             //calcular e mostrar o resultado da conversao
             const convertedAmount = amount * currentRate; 
-            resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+            resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
             currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`; 
         } catch (error) {
             resultDiv.textContent = 'Erro na api, tente novamente.';
