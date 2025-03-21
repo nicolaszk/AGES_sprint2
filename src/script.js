@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toCurrencySelect = document.getElementById('to-currency');
     const convertBtn = document.getElementById('convert');
     const resultDiv = document.getElementById('display_result');
-    const currentRateDiv = document.getElementById('cambioatual');
+    const currentRateDiv = document.getElementById('conversion');
 
     convertBtn.addEventListener('click', async function() {
         const amount = parseFloat(amountInput.value);
@@ -85,7 +85,8 @@ for (var i = 0; i < historicalRates.length; i++) {
             //calcular e mostrar o resultado da conversao
             const convertedAmount = amount * currentRate; 
             resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
-            currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`; 
+            currentRateDiv.display = "block";          
+currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`; 
         } catch (error) {
             resultDiv.textContent = 'Erro na api, tente novamente.';
             console.error('Erro de conversão:', error);
