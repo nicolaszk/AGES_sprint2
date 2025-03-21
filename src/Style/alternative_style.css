@@ -236,6 +236,8 @@ option {
     font-weight: 300;
     font-size: 300%;
     width: fit-content;
+    height: fit-content;
+    top: 50%;
     left: 15%;
 }
 
