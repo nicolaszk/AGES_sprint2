@@ -86,6 +86,7 @@ select {
     display: flex;
     background-color: #fff;
     font-family: "Goldman", sans-serif;
+    font-size: 1vmax;
     border: none;
     border-radius: 0px;
     width: 20%;
@@ -98,11 +99,6 @@ select {
 .option {
     font-family: "Goldman", sans-serif;
     font-size: 1.5vmax;
-}
-
-#select {
-    font-family: "Goldman", sans-serif;
-    font-size: 1.5vmax; 
 }
 
 #value_input {
@@ -245,8 +241,7 @@ select {
     color: white;
     font-family: "Goldman", sans-serif;
     font-weight: 300;
-    font-size: 6vh;
-    font-size: 3vw;
+    font-size: 6vmax;
     width: fit-content;
     height: 6vh;
     left: 16.5%;
@@ -255,19 +250,18 @@ select {
 .flag {
     position: absolute;
     display: flex;
-    width: 8%;
-    height: 40%;
+    width: auto;
+    height: 4vmax;
+
    /* background-color: #fff;*/
     right: 4%;
-    top: 35%;
+    top: 36%;
 }
 
 #conversion_symbol {
-    position: relative;
-    display: block;
-    object-fit: cover;
-    width: 8vh;
-    height: 3.5vw;
-    align-self: center;
-    left: 45%;
+    position: absolute;
+    display: flex;
+    width: 4vmax;
+    height: auto;
+    left: 48%;
 }
