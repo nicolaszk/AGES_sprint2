@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         BRL: 'br', CAD: 'ca', AUD: 'au', CHF: 'ch',
         CNY: 'cn', INR: 'in', MXN: 'mx'
     };
-
+    
     async function getFlagUrl(currencyCode) {
         if (typeof currencyCode !== 'string') {
             console.error(`Invalid currency code: ${currencyCode}`);
@@ -51,7 +51,45 @@ document.addEventListener('DOMContentLoaded', function () {
         updateFlag('from-currency', 'flag_from');
         updateFlag('to-currency', 'flag_to');
     };
+    resetButton = document.getElementById('reset');
+    if (resetButton) {
+        resetButton.addEventListener('click', function () {
+            try {
+                const fromSelect = document.getElementById('from-currency');
+                const toSelect = document.getElementById('to-currency');
+                const amountInput = document.getElementById('value_input');
+                const resultDisplay = document.getElementById('display_result');
+                const conversionDiv = document.getElementById('conversion');
 
+                console.log('Reset button clicked');
+                console.log('Conversion Div:', conversionDiv);
+
+                if (fromSelect) fromSelect.value = 'BRL';
+                if (toSelect) toSelect.value = 'BRL';
+                if (amountInput) amountInput.value = '';
+                if (resultDisplay) resultDisplay.textContent = '';
+
+                if (conversionDiv) {
+                    console.log('Attempting to reset conversion div');
+                    conversionDiv.textContent = '';
+                    conversionDiv.style.display = 'block'; // Change from 'none' to 'block'
+                }
+
+                for(let i = 0; i < 15; i++){
+                    const bar = document.getElementById(i.toString());
+                    if (bar) {
+                        bar.style.height = "5%";
+                    }
+                }
+
+                console.log('Reset complete');
+            } catch (error) {
+                console.error('Error in reset function:', error);
+            }
+        });
+    } else {
+        console.error('Reset button not found');
+    }
     convertBtn.addEventListener('click', async function () {
         const amount = parseFloat(amountInput.value);
         const fromCurrency = fromCurrencySelect.value;
