@@ -28,7 +28,7 @@ header {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     display: block;
     margin: 0;
     bottom: 0;
@@ -45,8 +45,7 @@ footer {
     position: absolute;
     display: flex;
     font-weight: 400;
-    font-size: 8vh;
-    font-size: 5vw;
+    font-size: 4vmax;
     font-family: "Goldman", sans-serif;
 
 }
@@ -74,8 +73,7 @@ footer {
     justify-content: center;
     border-radius: 10px;
     font-family: "Goldman", sans-serif;
-    font-size: 2vh;
-    font-size: 2vh;
+    font-size: 1vmax;
 }
 
 select {
@@ -97,8 +95,14 @@ select {
     border-radius: 10px;
 }
 
-option {
+.option {
     font-family: "Goldman", sans-serif;
+    font-size: 1.5vmax;
+}
+
+#select {
+    font-family: "Goldman", sans-serif;
+    font-size: 1.5vmax; 
 }
 
 #value_input {
@@ -110,8 +114,7 @@ option {
     right: 16%;
     border: none;
     font-family: "Goldman", sans-serif;
-    font-size: 5vh;
-    font-size: 3.5vw;
+    font-size: 2.5vmax;
     border-radius: 10px;
 }
 
@@ -125,9 +128,9 @@ option {
     background-color: #fff;
     border: none;
     font-family: "Goldman", sans-serif;
-    font-size: 5vh;
-    font-size: 3.5vw;
+    font-size: 2.5vmax;
     border-radius: 10px;
+    align-items: center;
 }
 
 #conversion {
@@ -189,7 +192,7 @@ option {
     background-color: #ddd;
     opacity: 10%;
 }
-.stage-two .box_bottom {
+.box_bottom {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -200,7 +203,7 @@ option {
     left: 15%;
 }
 
-.stage-two #statistics_text {
+#statistics_text {
     position: relative;
     display: block;
     font-family: "Goldman", sans-serif;
@@ -211,7 +214,7 @@ option {
     top: 0vh;
 }
 
-.stage-two #graph {
+#graph {
     position: absolute;
     align-items: flex-end;
     display: flex;
@@ -222,7 +225,7 @@ option {
     align-items: bottom;
 }
 
-.stage-two .bar {
+.bar {
     position: relative;
     display: flex;
     background-color: #D9D9D9;
@@ -232,11 +235,11 @@ option {
     margin: 0px 2.5% 0px 2.5%;
 }
 
-.stage-two #\30 {
+#\30 {
     background-color: #00FF1A;
 }
 
-.stage-two #conversion{
+#conversion{
     position: relative;
     display: block;
     color: white;
@@ -259,7 +262,7 @@ option {
     top: 35%;
 }
 
-#conversion_symble {
+#conversion_symbol {
     position: relative;
     display: block;
     object-fit: cover;

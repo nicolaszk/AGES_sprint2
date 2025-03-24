@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Montaga&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="stage-two">
-    <div class="container">
+<body>
+    <div class="container" style="overflow: anywhere;">
         <header>
             <h1 id="title_tool">Coin Converter</h1>
         </header>
@@ -18,40 +18,40 @@
             <div class="label_box">From:</div>
             <div class="from-group">
                 <select id="from-currency">
-                    <option value="BRL">BRL - Real Brasileiro</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="USD">USD - Dólar Americano</option>
-                    <option value="GBP">GBP - Libra inglesa</option>
-                    <option value="JPY">JPY - Iene japonês</option>
-                    <option value="CAD">CAD - Dólar Canadense</option>
-                    <option value="AUD">AUD - Dólar Australiano</option>
-                    <option value="CHF">CHF - Franco Suíco</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="INR">INR - Rúpia Indiana</option>
-                    <option value="MXN">MXN - Peso Mexicano</option>
+                    <option class="option" value="BRL">BRL - Real Brasileiro</option>
+                    <option class="option" value="EUR">EUR - Euro</option>
+                    <option class="option" value="USD">USD - Dólar Americano</option>
+                    <option class="option" value="GBP">GBP - Libra inglesa</option>
+                    <option class="option" value="JPY">JPY - Iene japonês</option>
+                    <option class="option" value="CAD">CAD - Dólar Canadense</option>
+                    <option class="option" value="AUD">AUD - Dólar Australiano</option>
+                    <option class="option" value="CHF">CHF - Franco Suíco</option>
+                    <option class="option" value="CNY">CNY - Yuan Chinês</option>
+                    <option class="option" value="INR">INR - Rúpia Indiana</option>
+                    <option class="option" value="MXN">MXN - Peso Mexicano</option>
                 </select>
             </div>
             <input type="text" id="value_input">
             <img src="" alt="flag_image" class="flag" id="flag_from">
         </div>
 
-        <img src="Images/conversion_symble.png" alt="conversion_symble" id="conversion_symble">
+        <img src="Images/conversion_symbol.png" alt="conversion_symbol" id="conversion_symbol">
 
         <div class="box">
             <div class="label_box">To:</div>
             <div class="to-group">
                <select id="to-currency">
-                    <option value="BRL">BRL - Real Brasileiro</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="USD">USD - Dólar Americano</option>
-                    <option value="GBP">GBP - Libra inglesa</option>
-                    <option value="JPY">JPY - Iene japonês</option>
-                    <option value="CAD">CAD - Dólar Canadense</option>
-                    <option value="AUD">AUD - Dólar Australiano</option>
-                    <option value="CHF">CHF - Franco Suíco</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="INR">INR - Rúpia Indiana</option>
-                    <option value="MXN">MXN - Peso Mexicano</option>
+                    <option class="option" value="BRL">BRL - Real Brasileiro</option>
+                    <option class="option" value="EUR">EUR - Euro</option>
+                    <option class="option" value="USD">USD - Dólar Americano</option>
+                    <option class="option" value="GBP">GBP - Libra inglesa</option>
+                    <option class="option" value="JPY">JPY - Iene japonês</option>
+                    <option class="option" value="CAD">CAD - Dólar Canadense</option>
+                    <option class="option" value="AUD">AUD - Dólar Australiano</option>
+                    <option class="option" value="CHF">CHF - Franco Suíco</option>
+                    <option class="option" value="CNY">CNY - Yuan Chinês</option>
+                    <option class="option" value="INR">INR - Rúpia Indiana</option>
+                    <option class="option" value="MXN">MXN - Peso Mexicano</option>
                 </select>
             </div>
             <div id="display_result"></div>
@@ -59,7 +59,7 @@
         </div>
 
         <div id="conversion"></div>
-        <div class="box_bottom">
+        <div class="box_bottom" >
             <div id="information">
                 <div id="statistics_text">statistics</div>
                 <button id="reset" name="reset" value="reset_all_values">reset</button>
