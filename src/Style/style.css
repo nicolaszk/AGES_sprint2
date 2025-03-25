@@ -86,6 +86,7 @@ select {
     display: flex;
     background-color: #fff;
     font-family: "Goldman", sans-serif;
+    font-size: 1vmax;
     border: none;
     border-radius: 0px;
     width: 20%;
@@ -98,11 +99,6 @@ select {
 .option {
     font-family: "Goldman", sans-serif;
     font-size: 1.5vmax;
-}
-
-#select {
-    font-family: "Goldman", sans-serif;
-    font-size: 1.5vmax; 
 }
 
 #value_input {
@@ -131,10 +127,6 @@ select {
     font-size: 2.5vmax;
     border-radius: 10px;
     align-items: center;
-}
-
-#conversion {
-    display: none;
 }
 
 .box_bottom {
@@ -229,14 +221,74 @@ select {
     position: relative;
     display: flex;
     background-color: #D9D9D9;
-    width: 5%;
+    align-self: flex-end;
+    width: 100%;
     height: 5%;
-    transition: height 1.5s ease-in-out;
-    margin: 0px 2.5% 0px 2.5%;
+    transition: all 1.5s ease;
+    margin: 0;
 }
 
-#\30 {
+.all_in_bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 8%;
+    height: 100%;
+    margin: 0px 1.5% 0px 1.5%;
+    transition: all 1.5s ease;
+}
+
+/* .bar:hover {
     background-color: #00FF1A;
+    transition: all 1s ease;
+} */
+
+.all_in_bar:hover {
+    width: 10%;
+    transition: width 1s ease;
+}
+
+.all_in_bar:hover .bar {
+    background-color: #00FF1A;
+    transition: all 1s ease;
+}
+
+.date {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    font-size: 0.67vmax;
+    align-self: center;
+    color: white;
+    font-family: "Goldman", sans-serif;
+}
+
+.all_in_bar:hover .date {
+    color: #00FF1A;
+    transition: all 0.6s linear;
+    align-self: center;
+    justify-content: center;
+}
+
+.value {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1s linear;
+    font-size: 0.7vmax;
+    align-self: center;
+    color: white;
+    font-family: "Goldman", sans-serif;
+}
+
+.all_in_bar:hover .value {
+    color: #00FF1A;
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+    align-self: center;
+    justify-self: center;
 }
 
 #conversion{
@@ -245,29 +297,34 @@ select {
     color: white;
     font-family: "Goldman", sans-serif;
     font-weight: 300;
-    font-size: 6vh;
-    font-size: 3vw;
-    width: fit-content;
-    height: 6vh;
+    font-size: 3vmax;
+    width: auto;
+    height: 3vmax;
     left: 16.5%;
 }
 
 .flag {
     position: absolute;
     display: flex;
-    width: 8%;
-    height: 40%;
+    width: auto;
+    height: 4vmax;
+
    /* background-color: #fff;*/
     right: 4%;
-    top: 35%;
+    top: 36%;
 }
 
 #conversion_symbol {
-    position: relative;
-    display: block;
-    object-fit: cover;
-    width: 8vh;
-    height: 3.5vw;
-    align-self: center;
-    left: 45%;
+    position: absolute;
+    display: flex;
+    width: 4vmax;
+    height: auto;
+    left: 48%;
+}
+
+#switch-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
 }
