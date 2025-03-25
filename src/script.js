@@ -110,6 +110,7 @@ function updateCurrency() {
     } else {
         console.error('Reset button not found');
     }
+fromCurrencySelect.addEventListener('change', convert);
 toCurrencySelect.addEventListener('change', convert);    
 convertBtn.addEventListener('click', convert);
     async function convert(){
