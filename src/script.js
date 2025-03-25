@@ -5,13 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const convertBtn = document.getElementById('convert');
     const resultDiv = document.getElementById('display_result');
     const currentRateDiv = document.getElementById('conversion');
-
     const currencyToCountryCode = {
         USD: 'us', EUR: 'eu', GBP: 'gb', JPY: 'jp',
         BRL: 'br', CAD: 'ca', AUD: 'au', CHF: 'ch',
         CNY: 'cn', INR: 'in', MXN: 'mx'
     };
+    ///////////
+
+  let rawInput = "";
+  amountInput.addEventListener("input", updateCurrency);
+
+    fromCurrencySelect.addEventListener("change", updateCurrency);
+function updateCurrency() {
+    let value = amountInput.value.replace(/[^0-9.]/g, ""); // Allow numbers & decimals
+    let currency = fromCurrencySelect.value;
     
+    rawInput = value; // Store the raw numeric value
+
+    if (value) {
+        amountInput.value = `${value} ${currency}`;
+    } else {
+        amountInput.value = "";
+    }
+}
+  // Function to get the raw numeric value
+    
+    //
     async function getFlagUrl(currencyCode) {
         if (typeof currencyCode !== 'string') {
             console.error(`Invalid currency code: ${currencyCode}`);
@@ -67,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (toSelect) toSelect.value = 'EUR';
                 if (amountInput) amountInput.value = '';
                 if (resultDisplay) resultDisplay.textContent = '';
-
+                rawInput = "";
                 if (conversionDiv) {
                     console.log('Attempting to reset conversion div');
                     conversionDiv.textContent = '';
@@ -91,9 +110,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Reset button not found');
     }
-    convertBtn.addEventListener('click', async function () {
+toCurrencySelect.addEventListener('change', convert);    
+convertBtn.addEventListener('click', convert);
+    async function convert(){
 
-        const amount = parseFloat(amountInput.value);
+        const amount = rawInput;
         const fromCurrency = fromCurrencySelect.value;
         const toCurrency = toCurrencySelect.value;
         if(fromCurrency == toCurrency){
@@ -163,13 +184,13 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Câmbio atual:", currentRate);
             console.log("Câmbio dos últimos 15 dias:", historicalRates);
 
-            const convertedAmount = amount * currentRate;
+            const convertedAmount = rawInput * currentRate;
             resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
             currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`;
         } catch (error) {
             console.error(error);
             resultDiv.textContent = 'Erro ao converter moedas';
         }
-    });
+    }
 });
 
