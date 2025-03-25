@@ -265,3 +265,10 @@ select {
     height: auto;
     left: 48%;
 }
+
+#switch-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}

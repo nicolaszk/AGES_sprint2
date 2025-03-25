@@ -159,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Câmbio dos últimos 15 dias:", historicalRates);
 
             const convertedAmount = amount * currentRate;
-            resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
+            // resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
+            resultDiv.textContent = `${convertedAmount.toFixed(2)}`;
             currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`;
         } catch (error) {
             console.error(error);
@@ -168,3 +169,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+const switch_btn = document.getElementById('switch-btn');
+switch_btn.addEventListener('click', () => {
+    const aux_from = document.getElementById('from-currency');
+    const aux_from_value = aux_from.value;
+    const aux_to = document.getElementById('to-currency');
+    const aux_to_value = aux_to.value;
+    const aux_input = document.getElementById('value_input');
+    const aux_input_value = aux_input.value;
+    const aux_output = document.getElementById('display_result');
+    const aux_output_value = aux_output.textContent;
+    aux_from.value = aux_to_value;
+    aux_to.value = aux_from_value;
+    aux_input.value = parseFloat(aux_output_value);
+    aux_output.textContent = '';
+    
+
+
+});
