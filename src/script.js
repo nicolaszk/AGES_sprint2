@@ -60,10 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const amountInput = document.getElementById('value_input');
                 const resultDisplay = document.getElementById('display_result');
                 const conversionDiv = document.getElementById('conversion');
-
                 console.log('Reset button clicked');
                 console.log('Conversion Div:', conversionDiv);
-
+                
                 if (fromSelect) fromSelect.value = 'BRL';
                 if (toSelect) toSelect.value = 'BRL';
                 if (amountInput) amountInput.value = '';
@@ -81,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         bar.style.height = "5%";
                     }
                 }
+                updateFlag('from-currency', 'flag_from');
+                updateFlag('to-currency', 'flag_to');
 
                 console.log('Reset complete');
             } catch (error) {
@@ -91,10 +92,14 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Reset button not found');
     }
     convertBtn.addEventListener('click', async function () {
+
         const amount = parseFloat(amountInput.value);
         const fromCurrency = fromCurrencySelect.value;
         const toCurrency = toCurrencySelect.value;
-
+        if(fromCurrency == toCurrency){
+            resultDiv.textContent = 'As moedas não podem ser as mesmas';
+            return;
+        }
         if (isNaN(amount)) {
             resultDiv.textContent = 'Insira um valor válido';
             return;
