@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Conversion Div:', conversionDiv);
                 
                 if (fromSelect) fromSelect.value = 'BRL';
-                if (toSelect) toSelect.value = 'BRL';
+                if (toSelect) toSelect.value = 'EUR';
                 if (amountInput) amountInput.value = '';
                 if (resultDisplay) resultDisplay.textContent = '';
 
