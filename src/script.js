@@ -5,13 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const convertBtn = document.getElementById('convert');
     const resultDiv = document.getElementById('display_result');
     const currentRateDiv = document.getElementById('conversion');
-
     const currencyToCountryCode = {
         USD: 'us', EUR: 'eu', GBP: 'gb', JPY: 'jp',
         BRL: 'br', CAD: 'ca', AUD: 'au', CHF: 'ch',
         CNY: 'cn', INR: 'in', MXN: 'mx'
     };
+    ///////////
+
+  let rawInput = "";
+  amountInput.addEventListener("input", updateCurrency);
+
+    fromCurrencySelect.addEventListener("change", updateCurrency);
+function updateCurrency() {
+    let value = amountInput.value.replace(/[^0-9.]/g, ""); // Allow numbers & decimals
+    let currency = fromCurrencySelect.value;
     
+    rawInput = value; // Store the raw numeric value
+
+    if (value) {
+        amountInput.value = `${value} ${currency}`;
+    } else {
+        amountInput.value = "";
+    }
+}
+  // Function to get the raw numeric value
+    
+    //
     async function getFlagUrl(currencyCode) {
         if (typeof currencyCode !== 'string') {
             console.error(`Invalid currency code: ${currencyCode}`);
@@ -60,15 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const amountInput = document.getElementById('value_input');
                 const resultDisplay = document.getElementById('display_result');
                 const conversionDiv = document.getElementById('conversion');
-
                 console.log('Reset button clicked');
                 console.log('Conversion Div:', conversionDiv);
-
+                
                 if (fromSelect) fromSelect.value = 'BRL';
                 if (toSelect) toSelect.value = 'EUR';
                 if (amountInput) amountInput.value = '';
                 if (resultDisplay) resultDisplay.textContent = '';
-
+                rawInput = "";
                 if (conversionDiv) {
                     console.log('Attempting to reset conversion div');
                     conversionDiv.textContent = '';
@@ -81,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         bar.style.height = "5%";
                     }
                 }
+                updateFlag('from-currency', 'flag_from');
+                updateFlag('to-currency', 'flag_to');
 
                 console.log('Reset complete');
             } catch (error) {
@@ -90,11 +110,17 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Reset button not found');
     }
-    convertBtn.addEventListener('click', async function () {
-        const amount = parseFloat(amountInput.value);
+toCurrencySelect.addEventListener('change', convert);    
+convertBtn.addEventListener('click', convert);
+    async function convert(){
+
+        const amount = rawInput;
         const fromCurrency = fromCurrencySelect.value;
         const toCurrency = toCurrencySelect.value;
-
+        if(fromCurrency == toCurrency){
+            resultDiv.textContent = 'As moedas não podem ser as mesmas';
+            return;
+        }
         if (isNaN(amount)) {
             resultDiv.textContent = 'Insira um valor válido';
             return;
