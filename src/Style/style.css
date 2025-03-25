@@ -258,12 +258,14 @@ select {
     position: relative;
     display: flex;
     width: fit-content;
-    font-size: 0.7vmax;
+    font-size: 0.67vmax;
     align-self: center;
+    color: white;
     font-family: "Goldman", sans-serif;
 }
 
 .all_in_bar:hover .date {
+    color: #00FF1A;
     transition: all 0.6s linear;
     align-self: center;
     justify-content: center;
@@ -275,10 +277,12 @@ select {
     transition: visibility 0s, opacity 1s linear;
     font-size: 0.7vmax;
     align-self: center;
+    color: white;
     font-family: "Goldman", sans-serif;
 }
 
 .all_in_bar:hover .value {
+    color: #00FF1A;
     position: relative;
     visibility: visible;
     opacity: 1;

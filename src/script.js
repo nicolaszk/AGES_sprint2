@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
         BRL: 'br', CAD: 'ca', AUD: 'au', CHF: 'ch',
         CNY: 'cn', INR: 'in', MXN: 'mx'
     };
+    const numberToNameMonth = {
+        '01': 'JAN', '02': 'FEV', '03': 'MAR', '04': 'ABR',
+        '05': 'MAI', '06': 'JUN', '07': 'JUL', '08': 'AGO',
+        '09': 'SET', '10': 'OUT', '11': 'NOV', '12': 'DEZ'
+    }
     ///////////
 
   let rawInput = "";
@@ -175,8 +180,18 @@ convertBtn.addEventListener('click', convert);
 
             historicalRates.forEach((entry, i) => {
                 let bar = document.getElementById(i.toString());
-                if (!bar) return;
+                let value = document.getElementById('value_' + i);
+                let date = document.getElementById('date_' + i);
+                if (!bar || !value || !date) return;
+                console.log(typeof(entry.rate));
+                let numberString = ''+entry.rate;
+                if (numberString.length > 4) {
+                    numberString = numberString.slice(0,4)
+                }
+                value.textContent = Number(numberString)
 
+                date.textContent = entry.date.slice(-5).replace('-','/')
+                
                 let barAltura = ((entry.rate - minRate) / (maxRate - minRate)) * 50 + 25;
                 console.log(`Bar ${i} altura: ${barAltura}%`);
                 bar.style.height = barAltura + "%";
