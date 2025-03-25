@@ -185,15 +185,14 @@ convertBtn.addEventListener('click', convert);
             console.log("Câmbio dos últimos 15 dias:", historicalRates);
 
             const convertedAmount = amount * currentRate;
-            // resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
-            resultDiv.textContent = `${convertedAmount.toFixed(2)}`;
+            resultDiv.textContent = `${convertedAmount.toFixed(2)} ${toCurrency}`;
+            //resultDiv.textContent = `${convertedAmount.toFixed(2)}`;
             currentRateDiv.textContent = `1 ${fromCurrency} = ${currentRate} ${toCurrency}`;
         } catch (error) {
             console.error(error);
             resultDiv.textContent = 'Erro ao converter moedas';
         }
-    });
-});
+    };
 
 const switch_btn = document.getElementById('switch-btn');
 switch_btn.addEventListener('click', () => {
@@ -209,7 +208,8 @@ switch_btn.addEventListener('click', () => {
     aux_to.value = aux_from_value;
     aux_input.value = parseFloat(aux_output_value);
     aux_output.textContent = '';
-    
-
-
-});
+    updateCurrency();
+    convert();
+    updateFlag('from-currency', 'flag_from');
+    updateFlag('to-currency', 'flag_to');
+    });})
