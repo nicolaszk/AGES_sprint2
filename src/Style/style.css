@@ -190,10 +190,10 @@ select {
     display: flex;
     flex-direction: row;
     margin-top: 0.5%;
-    width: 66%;
+    width: 70%;
     height: 25%;
     background-color: none;
-    left: 16.5%;
+    left: 15%;
 }
 
 #statistics_text {
