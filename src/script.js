@@ -189,8 +189,8 @@ convertBtn.addEventListener('click', convert);
                 if (!bar || !value || !date) return;
                 console.log(typeof(entry.rate));
                 let numberString = ''+entry.rate;
-                if (numberString.length > 5) {
-                    numberString = numberString.slice(0,5)
+                if (numberString.length > 4) {
+                    numberString = numberString.slice(0,4)
                 }
                 value.textContent = Number(numberString)
 
