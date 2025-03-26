@@ -112,12 +112,13 @@ select {
     font-family: "Goldman", sans-serif;
     font-size: 2.5vmax;
     border-radius: 10px;
+    margin: 0;
 }
 
 #display_result {
     position: absolute;
     display: flex;
-    width: 60%;
+    width: 60.3%;
     height: 45%;
     top: 40%;
     right: 16%;
@@ -308,7 +309,7 @@ select {
     display: flex;
     width: auto;
     height: 4vmax;
-    justify-self: bottom;
+    /* justify-self: bottom; */
    /* background-color: #fff;*/
     right: 4%;
     top: 36%;
