@@ -26,15 +26,14 @@ function updateCurrency() {
     let currency = fromCurrencySelect.value;
     
     rawInput = value; // Store the raw numeric value
-
+    
     if (value) {
         amountInput.value = `${value} ${currency}`;
     } else {
         amountInput.value = "";
     }
-}
-  // Function to get the raw numeric value
-    
+    amountInput.setSelectionRange(value.length, value.length);
+}   
     //
     async function getFlagUrl(currencyCode) {
         if (typeof currencyCode !== 'string') {
