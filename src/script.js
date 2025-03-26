@@ -92,6 +92,10 @@ function updateCurrency() {
                 if (amountInput) amountInput.value = '';
                 if (resultDisplay) resultDisplay.textContent = '';
                 rawInput = "";
+                for (i = 0; i < 15; i++) {
+                    document.getElementById('value_'+i).textContent = '';
+                    document.getElementById('date_'+i).textContent = '';
+                }
                 if (conversionDiv) {
                     console.log('Attempting to reset conversion div');
                     conversionDiv.textContent = '';
@@ -185,8 +189,8 @@ convertBtn.addEventListener('click', convert);
                 if (!bar || !value || !date) return;
                 console.log(typeof(entry.rate));
                 let numberString = ''+entry.rate;
-                if (numberString.length > 4) {
-                    numberString = numberString.slice(0,4)
+                if (numberString.length > 5) {
+                    numberString = numberString.slice(0,5)
                 }
                 value.textContent = Number(numberString)
 
