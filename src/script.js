@@ -26,15 +26,14 @@ function updateCurrency() {
     let currency = fromCurrencySelect.value;
     
     rawInput = value; // Store the raw numeric value
-
+    
     if (value) {
         amountInput.value = `${value} ${currency}`;
     } else {
         amountInput.value = "";
     }
-}
-  // Function to get the raw numeric value
-    
+    amountInput.setSelectionRange(value.length, value.length);
+}   
     //
     async function getFlagUrl(currencyCode) {
         if (typeof currencyCode !== 'string') {
@@ -92,6 +91,10 @@ function updateCurrency() {
                 if (amountInput) amountInput.value = '';
                 if (resultDisplay) resultDisplay.textContent = '';
                 rawInput = "";
+                for (i = 0; i < 15; i++) {
+                    document.getElementById('value_'+i).textContent = '';
+                    document.getElementById('date_'+i).textContent = '';
+                }
                 if (conversionDiv) {
                     console.log('Attempting to reset conversion div');
                     conversionDiv.textContent = '';
