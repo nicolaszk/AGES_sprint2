@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const currencyToCountryCode = {
         USD: 'us', EUR: 'eu', GBP: 'gb', JPY: 'jp',
         BRL: 'br', CAD: 'ca', AUD: 'au', CHF: 'ch',
-        CNY: 'cn', INR: 'in', MXN: 'mx'
+        CNY: 'cn', INR: 'in', MXN: 'mx', ZAR: 'za',
+        RUB: 'ru', KRW: 'kr', SEK: 'se', NZD: 'nz',
+        SGD: 'sg', HKD: 'hk', NOK: 'no', TRY: 'tr',
+        PLN: 'pl', THB: 'th', IDR: 'id', HUF: 'hu',
+        CZK: 'cz', ILS: 'il', CLP: 'cl', PHP: 'ph',
+        AED: 'ae', COP: 'co', SAR: 'sa', MYR: 'my'
     };
     const numberToNameMonth = {
         '01': 'JAN', '02': 'FEV', '03': 'MAR', '04': 'ABR',
