@@ -192,7 +192,7 @@ convertBtn.addEventListener('click', convert); // quando o botao de convert for 
                 if (!bar || !value || !date) return; // se nao tiver a barrinha, o valor ou a data, nao faz nada
                 console.log(typeof(entry.rate)); // printa no console o tipo da taxa de cambio
                 let numberString = ''+entry.rate; // transforma a taxa de cambio em string
-                if (numberString.length > 4) { // se a string for maior que 4
+                if (numberString.length > 5) { // se a string for maior que 4
                     numberString = numberString.slice(0,4) // corta a string pra ter 4 caracteres
                 } 
                 value.textContent = Number(numberString) // coloca o valor da taxa de cambio na barrinha
